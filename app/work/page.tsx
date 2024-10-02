@@ -35,11 +35,20 @@ const projects = [
     category: "full-stack",
     title: "project 1",
     description:
-      "asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf ",
-    stack: [{ name: "Next.js" }, { name: "Css 3" }],
-    image: "/profileImg_bg.png",
-    live: "",
-    github: "",
+      "This project aims to create a unique social media platform by integrating essential features from modern social networking sites and major services. I started with basic functionalities such as authentication and user posts. Although the project is still in progress, I plan to expand its features and enhance its usability in the future.",
+    stack: [
+      { name: "Next.js" },
+      { name: "TypeScript" },
+      { name: "PostgreSQL" },
+      { name: "Prisma" },
+      { name: "Shadcn UI" },
+      { name: "TailwindCSS" },
+      { name: "Express" },
+    ],
+    image:
+      "https://github.com/user-attachments/assets/e02bdb2f-3d36-46d3-be7d-74ecba66024b",
+    live: "https://social-media-app-next-js-ten.vercel.app",
+    github: "https://github.com/yusuken1121/SocialMediaApp_NextJs",
   },
   {
     num: "03",
@@ -88,7 +97,7 @@ const Work = () => {
               <p className="text-white/60">{project.description}</p>
 
               {/* stack */}
-              <ul className="flex gap-4">
+              <ul className="flex flex-wrap gap-4">
                 {project.stack.map((item, idx) => {
                   return (
                     <li key={idx} className="text-xl text-accent">
