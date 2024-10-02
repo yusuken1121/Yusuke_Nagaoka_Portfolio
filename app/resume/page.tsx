@@ -12,6 +12,8 @@ import {
   SiCss3,
   SiPostgresql,
   SiMongodb,
+  SiShadcnui,
+  SiMui,
 } from "react-icons/si";
 
 const about = {
@@ -126,6 +128,14 @@ const skills = {
     {
       icon: <SiTailwindcss />,
       name: "Tailwind CSS",
+    },
+    {
+      icon: <SiShadcnui />,
+      name: "Shadcn",
+    },
+    {
+      icon: <SiMui />,
+      name: "MUI",
     },
     {
       icon: <SiHtml5 />,
