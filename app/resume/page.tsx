@@ -1,15 +1,6 @@
 "use client";
 
 import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaFigma,
-  FaNodeJs,
-} from "react-icons/fa";
-
-import {
   SiTailwindcss,
   SiNextdotjs,
   SiReact,
@@ -129,11 +120,19 @@ const skills = {
       name: "Express",
     },
     {
-      icon: <FaHtml5 />,
+      icon: <SiNodedotjs />,
+      name: "Node.js",
+    },
+    {
+      icon: <SiTailwindcss />,
+      name: "Tailwind CSS",
+    },
+    {
+      icon: <SiHtml5 />,
       name: "html 5",
     },
     {
-      icon: <FaCss3 />,
+      icon: <SiCss3 />,
       name: "css 3",
     },
   ],
