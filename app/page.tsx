@@ -2,7 +2,7 @@ import Photo from "@/components/Photo";
 import Socials from "@/components/Socials";
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
-import * as motion from "framer-motion/client";
+// import * as motion from "framer-motion/client";
 // import { motion } from "framer-motion";
 
 const text = "Full-Stack Developer".split("");
