@@ -5,7 +5,7 @@ import { FiDownload } from "react-icons/fi";
 // import * as motion from "framer-motion/client";
 // import { motion } from "framer-motion";
 
-const text = "Full-Stack Developer".split("");
+// const text = "Full-Stack Developer".split("");
 
 const Home = () => {
   return (
