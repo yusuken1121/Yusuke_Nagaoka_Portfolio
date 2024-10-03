@@ -50,11 +50,11 @@ const Services = () => {
               >
                 {/* top */}
                 <div className="w-full flex justify-between items-center">
-                  <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
+                  <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover group-hover:text-shadow transition-all duration-500">
                     {service.num}
                   </div>
                   <Link
-                    className="flex justify-center items-center w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 rotate-45 hover:-rotate-0"
+                    className="flex justify-center items-center w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent group-hover:shadow-custom transition-all duration-500 rotate-45 hover:-rotate-0"
                     href={service.href}
                   >
                     <BsArrowRight className="text-primary text-3xl" />
@@ -63,7 +63,7 @@ const Services = () => {
                 {/* heading */}
                 <h2
                   className="text-[42px] font-bold leading-none text-white
-                  group-hover:text-accent transition-all duration-500"
+                  group-hover:text-accent group-hover:text-shadow transition-all duration-500"
                 >
                   {service.title}
                 </h2>
