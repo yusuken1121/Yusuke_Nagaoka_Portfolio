@@ -22,18 +22,25 @@ const projects = [
   {
     num: "01",
     category: "full-stack",
-    title: "project 1",
+    title: "Vancouver RoomFinder",
     description:
-      "asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf ",
-    stack: [{ name: "Next.js" }, { name: "Css 3" }],
-    image: "/profileImg_bg.png",
-    live: "",
+      "I’m excited to share that I have built a website that introduces shared housing in Canada! From requirement gathering to final implementation, I handled every step of this project. The website provides easy navigation and valuable information for people looking for shared accommodations in Canada.",
+    stack: [
+      { name: "Next.js" },
+      { name: "TypeScript" },
+      { name: "Notion" },
+      { name: "Shadcn UI" },
+      { name: "Tailwind" },
+      { name: "Express" },
+    ],
+    image: "/Van_ouchi.png",
+    live: "https://www.van-ouchi.com/properties",
     github: "",
   },
   {
     num: "02",
     category: "full-stack",
-    title: "project 1",
+    title: "Social Media Clone",
     description:
       "This project aims to create a unique social media platform by integrating essential features from modern social networking sites and major services. I started with basic functionalities such as authentication and user posts. Although the project is still in progress, I plan to expand its features and enhance its usability in the future.",
     stack: [
@@ -52,11 +59,10 @@ const projects = [
   {
     num: "03",
     category: "frontend",
-    title: "project 1",
-    description:
-      "asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf ",
+    title: "project 3",
+    description: "",
     stack: [{ name: "Next.js" }, { name: "Css 3" }],
-    image: "/profileImg_bg.png",
+    image: "",
     live: "",
     github: "",
   },
@@ -92,6 +98,9 @@ const Work = () => {
                 {project.category} project
               </h2>
 
+              <h3 className="text-2xl text-accent text-shadow font-bold leading-none group-hover:text-accent transition-all duration-500 capitalize">
+                {project.title}
+              </h3>
               {/* description */}
               <p className="text-white/60">{project.description}</p>
 

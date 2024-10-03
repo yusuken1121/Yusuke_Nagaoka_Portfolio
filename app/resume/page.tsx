@@ -52,21 +52,34 @@ const about = {
   ],
 };
 
-const experiences = {
-  icon: "",
+type ExperienceType = {
+  title: string;
+  description: string;
+  items: {
+    company: string;
+    position: string;
+    employmentType?: string;
+    country: string;
+    duration: string;
+    homepageUrl?: string; // for future
+  }[];
+};
+const experiences: ExperienceType = {
   title: "My experience",
   description:
-    "Lorem asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf",
+    "I have contributed to driving projects forward by utilizing my experience in working with multicultural teams, respecting diverse cultures and individual personalities.",
   items: [
     {
-      company: "Bloom Consulting Inc.",
+      company: "BlOOM CONSULTING Inc.",
       position: "Full Stack Developer",
+      employmentType: "freelance",
       country: "Canada",
       duration: "2024 Sep - Present",
     },
     {
-      company: "Freelance",
+      company: "株式会社 フォックスバイト",
       position: "Frontend",
+      employmentType: "freelance",
       country: "Japan",
       duration: "2024 Sep - Present",
     },
@@ -195,16 +208,21 @@ const Resume = () => {
                       return (
                         <li
                           key={idx}
-                          className="bg-[#23232c] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#23232c] h-[196px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                          <h3 className="text-xl max-w-[260px] min-h-[30px] text-center lg:text-left">
                             {item.position}
                           </h3>
+                          {item.employmentType && (
+                            <p className="text-white/80 min-h-[40px]">
+                              - {item.employmentType}
+                            </p>
+                          )}
                           <p className="text-white/60">{item.country}</p>
                           <div className="flex items-center gap-3">
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60">{item.company}</p>
+                            <p className="text-white">{item.company}</p>
                           </div>
                         </li>
                       );

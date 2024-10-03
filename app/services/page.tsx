@@ -13,13 +13,13 @@ const services = [
   {
     num: "02",
     href: "",
-    title: "Web Development",
-    description: "description",
+    title: "Language",
+    description: "Japanese and English",
   },
   {
     num: "03",
     href: "",
-    title: "Web Development",
+    title: "Team management",
     description: "description",
   },
   {

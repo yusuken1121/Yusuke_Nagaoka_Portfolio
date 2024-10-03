@@ -2,6 +2,10 @@ import Photo from "@/components/Photo";
 import Socials from "@/components/Socials";
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
+import * as motion from "framer-motion/client";
+// import { motion } from "framer-motion";
+
+const text = "Full-Stack Developer".split("");
 
 const Home = () => {
   return (
@@ -10,13 +14,38 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between pt-8 xl:pt-24 xl:pb-24">
           {/* Text */}
           <div className="text-center xl:text-left order-2 xl:order-none mt-5">
-            <span>Full-Stack Developer</span>
+            <span>Hello, I&apos;m</span>
             <h1 className="h1 mb-6">
-              Hello, I&apos;m <br />
-              <span className="text-accent text-shadow">Yusuke Nagaoka</span>
+              <span>
+                Yusuke Nagaoka
+                <br />
+              </span>
+              <span className="text-accent text-shadow">
+                Full-Stack Developer
+              </span>
+              {/* {text.map((char, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: 1,
+                    transition: {
+                      duration: 0.05,
+                      delay: 1 + i * 0.05,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      repeatDelay: 2,
+                    },
+                  }}
+                  style={{ letterSpacing: "normal" }}
+                  className="text-accent text-shadow"
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))} */}
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I excel at crafting elegant digital experiences
+              I work as a freelance engineer in both Canada and Japan.
             </p>
 
             <div className="flex flex-col xl:flex-row items-center gap-8">
