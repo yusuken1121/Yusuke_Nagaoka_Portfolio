@@ -45,8 +45,7 @@ const projects = [
       { name: "TailwindCSS" },
       { name: "Express" },
     ],
-    image:
-      "https://github.com/user-attachments/assets/e02bdb2f-3d36-46d3-be7d-74ecba66024b",
+    image: "SocialMediaClone.png",
     live: "https://social-media-app-next-js-ten.vercel.app",
     github: "https://github.com/yusuken1121/SocialMediaApp_NextJs",
   },
@@ -161,6 +160,7 @@ const Work = () => {
                           src={project.image}
                           fill
                           alt="project"
+                          unoptimized={true}
                           className="object-cover"
                         />
                       </div>
