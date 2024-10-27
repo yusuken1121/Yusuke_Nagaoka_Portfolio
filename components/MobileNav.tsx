@@ -4,32 +4,19 @@ import { usePathname } from "next/navigation";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { CiMenuFries } from "react-icons/ci";
 import Link from "next/link";
-
-const links = [
-  {
-    name: "home",
-    path: "/",
-  },
-  {
-    name: "services",
-    path: "/services",
-  },
-  {
-    name: "resume",
-    path: "/resume",
-  },
-  {
-    name: "work",
-    path: "/work",
-  },
-  {
-    name: "contact",
-    path: "/contact",
-  },
-];
+import { useTranslations } from "next-intl";
 
 const MobileNav = () => {
   const pathname = usePathname();
+  const t = useTranslations("Header");
+
+  const links = [
+    { name: t("home"), path: "/" },
+    { name: t("services"), path: "/services" },
+    { name: t("resume"), path: "/resume" },
+    { name: t("work"), path: "/work" },
+    { name: t("contact"), path: "/contact" },
+  ];
   return (
     <Sheet>
       <SheetTrigger className="flex justify-center items-center">

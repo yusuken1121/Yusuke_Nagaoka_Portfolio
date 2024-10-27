@@ -17,58 +17,74 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
+import { useTranslations } from "next-intl";
 
-const projects = [
-  {
-    num: "01",
-    category: "full-stack",
-    title: "Vancouver RoomFinder",
-    description:
-      "I’m excited to share that I have built a website that introduces shared housing in Canada! From requirement gathering to final implementation, I handled every step of this project. The website provides easy navigation and valuable information for people looking for shared accommodations in Canada.",
-    stack: [
-      { name: "Next.js" },
-      { name: "TypeScript" },
-      { name: "Notion" },
-      { name: "Shadcn UI" },
-      { name: "Tailwind" },
-      { name: "Express" },
-    ],
-    image: "/Van_ouchi.png",
-    live: "https://www.van-ouchi.com/properties",
-    github: "",
-  },
-  {
-    num: "02",
-    category: "full-stack",
-    title: "Social Media Clone",
-    description:
-      "This project aims to create a unique social media platform by integrating essential features from modern social networking sites and major services. I started with basic functionalities such as authentication and user posts. Although the project is still in progress, I plan to expand its features and enhance its usability in the future.",
-    stack: [
-      { name: "Next.js" },
-      { name: "TypeScript" },
-      { name: "PostgreSQL" },
-      { name: "Prisma" },
-      { name: "Shadcn UI" },
-      { name: "TailwindCSS" },
-      { name: "Express" },
-    ],
-    image: "SocialMediaClone.png",
-    live: "https://social-media-app-next-js-ten.vercel.app",
-    github: "https://github.com/yusuken1121/SocialMediaApp_NextJs",
-  },
-  {
-    num: "03",
-    category: "frontend",
-    title: "project 3",
-    description: "",
-    stack: [{ name: "Next.js" }, { name: "Css 3" }],
-    image: "",
-    live: "",
-    github: "",
-  },
-];
+// const projects = [
+//   {
+//     num: "01",
+//     category: "full-stack",
+//     title: "Vancouver RoomFinder",
+//     description:
+//       "I’m excited to share that I have built a website that introduces shared housing in Canada! From requirement gathering to final implementation, I handled every step of this project. The website provides easy navigation and valuable information for people looking for shared accommodations in Canada.",
+//     stack: [
+//       { name: "Next.js" },
+//       { name: "TypeScript" },
+//       { name: "Notion" },
+//       { name: "Shadcn UI" },
+//       { name: "Tailwind" },
+//       { name: "Express" },
+//     ],
+//     image: "/Van_ouchi.png",
+//     live: "https://www.van-ouchi.com/properties",
+//     github: "",
+//   },
+//   {
+//     num: "02",
+//     category: "full-stack",
+//     title: "Social Media Clone",
+//     description:
+//       "This project aims to create a unique social media platform by integrating essential features from modern social networking sites and major services. I started with basic functionalities such as authentication and user posts. Although the project is still in progress, I plan to expand its features and enhance its usability in the future.",
+//     stack: [
+//       { name: "Next.js" },
+//       { name: "TypeScript" },
+//       { name: "PostgreSQL" },
+//       { name: "Prisma" },
+//       { name: "Shadcn UI" },
+//       { name: "TailwindCSS" },
+//       { name: "Express" },
+//     ],
+//     image: "SocialMediaClone.png",
+//     live: "https://social-media-app-next-js-ten.vercel.app",
+//     github: "https://github.com/yusuken1121/SocialMediaApp_NextJs",
+//   },
+//   {
+//     num: "03",
+//     category: "frontend",
+//     title: "project 3",
+//     description: "",
+//     stack: [{ name: "Next.js" }, { name: "Css 3" }],
+//     image: "",
+//     live: "",
+//     github: "",
+//   },
+// ];
+export interface Project {
+  num: string;
+  category: string;
+  title: string;
+  description: string;
+  stack: { name: string }[];
+  image: string;
+  live: string;
+  github: string;
+}
 
 const Work = () => {
+  const t = useTranslations();
+
+  // const projects: Project[] = JSON.parse(t("Projects")); // 多言語化されたプロジェクトデータを取得
+  const projects = t.raw("Projects") as Project[];
+
   const [project, setProject] = useState(projects[0]);
   const handleSlideChange = (swiper: SwiperType) => {
     const currentIndex = swiper.activeIndex;

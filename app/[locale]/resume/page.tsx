@@ -1,4 +1,8 @@
 "use client";
+// メンテ方法
+// 1. 追加方法
+// ja, en jsonに配列で書く
+// iconを追加する場合は、iconのimportをし、iconMapにも追加する
 
 import {
   SiTailwindcss,
@@ -16,43 +20,17 @@ import {
   SiMui,
 } from "react-icons/si";
 
-const about = {
-  title: "About me",
-  description:
-    "Lorem asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf ",
-  info: [
-    {
-      fieldName: "Name",
-      fieldValue: "Yusuke Nagaoka",
-    },
-    {
-      fieldName: "Phone (CA)",
-      fieldValue: "(+1) 604 726 0374",
-    },
-    {
-      fieldName: "Phone (JP)",
-      fieldValue: "(+81) 090 6189 1996",
-    },
-    {
-      fieldName: "Nationality ",
-      fieldValue: "Japan",
-    },
-    {
-      fieldName: "Email",
-      fieldValue: "yusukechopin11@gmail.com",
-    },
-    {
-      fieldName: "Freelance",
-      fieldValue: "Available",
-    },
-    {
-      fieldName: "Languages",
-      fieldValue: "English Japanese",
-    },
-  ],
-};
+export interface AboutType {
+  title: string;
+  description: string;
+  info: InfoItem[];
+}
+export interface InfoItem {
+  fieldName: string;
+  fieldValue: string;
+}
 
-type ExperienceType = {
+export interface ExperienceType {
   title: string;
   description: string;
   items: {
@@ -63,103 +41,47 @@ type ExperienceType = {
     duration: string;
     homepageUrl?: string; // for future
   }[];
-};
-const experiences: ExperienceType = {
-  title: "My experience",
-  description:
-    "I have contributed to driving projects forward by utilizing my experience in working with multicultural teams, respecting diverse cultures and individual personalities.",
-  items: [
-    {
-      company: "BlOOM CONSULTING Inc.",
-      position: "Full Stack Developer",
-      employmentType: "freelance",
-      country: "Canada",
-      duration: "2024 Sep - Present",
-    },
-    {
-      company: "株式会社 フォックスバイト",
-      position: "Frontend",
-      employmentType: "freelance",
-      country: "Japan",
-      duration: "2024 Sep - Present",
-    },
-    {
-      company: "Chingu",
-      position: "Frontend",
-      country: "Canada",
-      duration: "2024 Mar - Aug",
-    },
-  ],
+}
+
+export interface EducationsType {
+  icon: string;
+  title: string;
+  description: string;
+  items: EducationItem[];
+}
+export interface EducationItem {
+  school: string;
+  program: string;
+  country: string;
+  duration: string;
+}
+
+export interface SkillsType {
+  title: string;
+  description: string;
+  SkillList: SkillItem[];
+}
+export interface SkillItem {
+  name: string;
+  icon: string; // アイコン名は文字列で保存
+}
+
+const iconMap: { [key: string]: JSX.Element } = {
+  SiReact: <SiReact />,
+  SiNextdotjs: <SiNextdotjs />,
+  SiTypescript: <SiTypescript />,
+  SiJavascript: <SiJavascript />,
+  SiMongodb: <SiMongodb />,
+  SiPostgresql: <SiPostgresql />,
+  SiExpress: <SiExpress />,
+  SiNodedotjs: <SiNodedotjs />,
+  SiTailwindcss: <SiTailwindcss />,
+  SiShadcnui: <SiShadcnui />,
+  SiMui: <SiMui />,
+  SiHtml5: <SiHtml5 />,
+  SiCss3: <SiCss3 />,
 };
 
-const educations = {
-  icon: "",
-  title: "Education",
-  description:
-    "Lorem asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf",
-  items: [
-    {
-      company: "CICCC",
-      position: "Diploma in Full Stack Developer",
-      country: "Canada",
-      duration: "2024 Jan - Dec",
-    },
-  ],
-};
-
-const skills = {
-  title: "My skills",
-  description:
-    "Lorem asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf",
-  SkillList: [
-    {
-      icon: <SiReact />,
-      name: "React",
-    },
-    {
-      icon: <SiNextdotjs />,
-      name: "Next.js",
-    },
-    {
-      icon: <SiTypescript />,
-      name: "Typescript",
-    },
-    {
-      icon: <SiJavascript />,
-      name: "javascript",
-    },
-    { icon: <SiMongodb />, name: "MongoDB" },
-    { icon: <SiPostgresql />, name: "PostgreSQL" },
-    {
-      icon: <SiExpress />,
-      name: "Express",
-    },
-    {
-      icon: <SiNodedotjs />,
-      name: "Node.js",
-    },
-    {
-      icon: <SiTailwindcss />,
-      name: "Tailwind CSS",
-    },
-    {
-      icon: <SiShadcnui />,
-      name: "Shadcn",
-    },
-    {
-      icon: <SiMui />,
-      name: "MUI",
-    },
-    {
-      icon: <SiHtml5 />,
-      name: "html 5",
-    },
-    {
-      icon: <SiCss3 />,
-      name: "css 3",
-    },
-  ],
-};
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Tooltip,
@@ -170,8 +92,15 @@ import {
 
 import { motion } from "framer-motion";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useTranslations } from "next-intl";
 
 const Resume = () => {
+  const t = useTranslations("Resume");
+  const about = t.raw("About")[0] as AboutType;
+  const experiences = t.raw("Experiences")[0] as ExperienceType;
+  const educations = t.raw("Educations")[0] as EducationsType;
+  const skills = t.raw("Skills")[0] as SkillsType;
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -249,12 +178,12 @@ const Resume = () => {
                         >
                           <span className="text-accent">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                            {item.position}
+                            {item.program}
                           </h3>
                           <p className="text-white/60">{item.country}</p>
                           <div className="flex items-center gap-3">
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60">{item.company}</p>
+                            <p className="text-white/60">{item.school}</p>
                           </div>
                         </li>
                       );
@@ -273,26 +202,28 @@ const Resume = () => {
                     {skills.description}
                   </p>
                 </div>
-                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
-                  {skills.SkillList.map((skill, idx) => {
-                    return (
-                      <li key={idx}>
-                        <TooltipProvider>
-                          <Tooltip>
-                            <TooltipTrigger className="w-full h-[150px] bg-[#23232c] rounded-xl flex justify-center items-center group">
-                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
-                                {skill.icon}
-                              </div>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p className="capitalize">{skill.name}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                      </li>
-                    );
-                  })}
-                </ul>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
+                    {skills.SkillList.map((skill, idx) => {
+                      return (
+                        <li key={idx}>
+                          <TooltipProvider>
+                            <Tooltip>
+                              <TooltipTrigger className="w-full h-[150px] bg-[#23232c] rounded-xl flex justify-center items-center group">
+                                <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                                  {iconMap[skill.icon]}
+                                </div>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p className="capitalize">{skill.name}</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
               </div>
             </TabsContent>
 

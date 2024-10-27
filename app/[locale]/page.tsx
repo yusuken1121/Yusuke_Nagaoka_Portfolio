@@ -1,6 +1,7 @@
 import Photo from "@/components/Photo";
 import Socials from "@/components/Socials";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 import { FiDownload } from "react-icons/fi";
 // import * as motion from "framer-motion/client";
 // import { motion } from "framer-motion";
@@ -8,6 +9,8 @@ import { FiDownload } from "react-icons/fi";
 // const text = "Full-Stack Developer".split("");
 
 const Home = () => {
+  const t = useTranslations("Home");
+
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
@@ -15,6 +18,7 @@ const Home = () => {
           {/* Text */}
           <div className="text-center xl:text-left order-2 xl:order-none mt-5">
             <span>Hello, I&apos;m</span>
+
             <h1 className="h1 mb-6">
               <span>
                 Yusuke Nagaoka
@@ -45,7 +49,7 @@ const Home = () => {
               ))} */}
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I work as a freelance engineer in both Canada and Japan.
+              {t("description")}
             </p>
 
             <div className="flex flex-col xl:flex-row items-center gap-8">

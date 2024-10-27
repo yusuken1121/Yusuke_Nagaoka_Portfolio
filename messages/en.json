@@ -1,0 +1,201 @@
+{
+  "Header": {
+    "home": "Home",
+    "services": "Services",
+    "resume": "Resume",
+    "work": "Work",
+    "contact": "Contact"
+  },
+  "Home": {
+    "description": "I work as a freelance engineer in both Canada and Japan."
+  },
+  "Projects": [
+    {
+      "num": "01",
+      "category": "full-stack",
+      "title": "Vancouver RoomFinder",
+      "description": "I’m excited to share that I have built a website that introduces shared housing in Canada! From requirement gathering to final implementation, I handled every step of this project. The website provides easy navigation and valuable information for people looking for shared accommodations in Canada.",
+      "stack": [
+        { "name": "Next.js" },
+        { "name": "TypeScript" },
+        { "name": "Notion" },
+        { "name": "Shadcn UI" },
+        { "name": "Tailwind" },
+        { "name": "Express" }
+      ],
+      "image": "/Van_ouchi.png",
+      "live": "https://www.van-ouchi.com/properties",
+      "github": ""
+    },
+    {
+      "num": "02",
+      "category": "full-stack",
+      "title": "Social Media Clone",
+      "description": "This project aims to create a unique social media platform by integrating essential features from modern social networking sites and major services. I started with basic functionalities such as authentication and user posts. Although the project is still in progress, I plan to expand its features and enhance its usability in the future.",
+      "stack": [
+        { "name": "Next.js" },
+        { "name": "TypeScript" },
+        { "name": "PostgreSQL" },
+        { "name": "Prisma" },
+        { "name": "Shadcn UI" },
+        { "name": "TailwindCSS" },
+        { "name": "Express" }
+      ],
+      "image": "/SocialMediaClone.png",
+      "live": "https://social-media-app-next-js-ten.vercel.app",
+      "github": "https://github.com/yusuken1121/SocialMediaApp_NextJs"
+    },
+    {
+      "num": "03",
+      "category": "frontend",
+      "title": "project 3",
+      "description": "",
+      "stack": [{ "name": "Next.js" }, { "name": "Css 3" }],
+      "image": "",
+      "live": "",
+      "github": ""
+    }
+  ],
+  "Resume": {
+    "About": [
+      {
+        "title": "About me",
+        "description": "I have full-stack development experience, focusing on React, Next.js, and Node.js, utilizing the latest technologies. I studied algorithms, HTML, JavaScript, and SQL at Cornerstone International Community College in Canada and gained hands-on experience in application development. I value UI/UX design and teamwork, and I aim to continue enhancing my skills while building products that deliver meaningful value to users.",
+        "info": [
+          {
+            "fieldName": "Name",
+            "fieldValue": "Yusuke Nagaoka"
+          },
+          {
+            "fieldName": "Phone (CA)",
+            "fieldValue": "(+1) 604 726 0374"
+          },
+          {
+            "fieldName": "Phone (JP)",
+            "fieldValue": "(+81) 090 6189 1996"
+          },
+          {
+            "fieldName": "Nationality",
+            "fieldValue": "Japan"
+          },
+          {
+            "fieldName": "Email",
+            "fieldValue": "yusukechopin11@gmail.com"
+          },
+          {
+            "fieldName": "Freelance",
+            "fieldValue": "Available"
+          },
+          {
+            "fieldName": "Languages",
+            "fieldValue": "English Japanese"
+          }
+        ]
+      }
+    ],
+    "Experiences": [
+      {
+        "title": "My experience",
+        "description": "I have contributed to driving projects forward by utilizing my experience in working with multicultural teams, respecting diverse cultures and individual personalities.",
+        "items": [
+          {
+            "company": "BLOOM CONSULTING Inc.",
+            "position": "Full Stack Developer",
+            "employmentType": "freelance",
+            "country": "Canada",
+            "duration": "2024 Sep - Present"
+          },
+          {
+            "company": "Fox Byte",
+            "position": "Frontend",
+            "employmentType": "freelance",
+            "country": "Japan",
+            "duration": "2024 Sep - Present"
+          },
+          {
+            "company": "Chingu",
+            "position": "Frontend",
+            "country": "Canada",
+            "duration": "2024 Mar - Aug"
+          }
+        ]
+      }
+    ],
+    "Educations": [
+      {
+        "icon": "",
+        "title": "Education",
+        "description": "Through my experience, I have worked with the following technology stack. I possess a wide range of skills, covering both frontend and backend development. I can design and build flexible systems tailored to specific requirements. From creating dynamic UIs using React and Next.js to managing data efficiently with SQL and NoSQL databases, and developing backend services with Node.js and Express, I am capable of delivering end-to-end solutions.",
+        "items": [
+          {
+            "school": "CICCC",
+            "program": "Diploma in Full Stack Developer",
+            "country": "Canada",
+            "duration": "2024 Jan - Dec"
+          }
+        ]
+      }
+    ],
+
+    "Skills": [
+      {
+        "title": "My skills",
+        "description": "Through my experience, I have worked with the following technology stack. I possess a wide range of skills, covering both frontend and backend development, enabling me to design and build flexible systems tailored to specific requirements. From building dynamic UIs with React and Next.js to efficiently managing data using SQL and NoSQL, and handling server-side development with Node.js and Express, I am capable of delivering end-to-end solutions.",
+        "SkillList": [
+          { "name": "React", "icon": "SiReact" },
+          { "name": "Next.js", "icon": "SiNextdotjs" },
+          { "name": "TypeScript", "icon": "SiTypescript" },
+          { "name": "JavaScript", "icon": "SiJavascript" },
+          { "name": "MongoDB", "icon": "SiMongodb" },
+          { "name": "PostgreSQL", "icon": "SiPostgresql" },
+          { "name": "Express", "icon": "SiExpress" },
+          { "name": "Node.js", "icon": "SiNodedotjs" },
+          { "name": "Tailwind CSS", "icon": "SiTailwindcss" },
+          { "name": "Shadcn", "icon": "SiShadcnui" },
+          { "name": "MUI", "icon": "SiMui" },
+          { "name": "HTML 5", "icon": "SiHtml5" },
+          { "name": "CSS 3", "icon": "SiCss3" }
+        ]
+      }
+    ]
+  },
+  "Contact": {
+    "Description": [
+      {
+        "state": "Let's work together",
+        "description": "Feel free to say hi if you have any questions or just want to grab a beer or coffee.You can reach out to me on social media or by sending an email here."
+      }
+    ],
+    "Info": [
+      {
+        "icon": "FaPhoneAlt",
+        "title": "Phone (Canada)",
+        "description": "(+1) 604 726 0374"
+      },
+      {
+        "icon": "FaPhoneAlt",
+        "title": "Phone (Japan)",
+        "description": "(+81) 090 6189 1996"
+      },
+      {
+        "icon": "FaEnvelope",
+        "title": "Email",
+        "description": "yusukechopin11@gmail.com"
+      },
+      {
+        "icon": "FaMapMarkerAlt",
+        "title": "Address",
+        "description": "Vancouver or Tokyo"
+      }
+    ],
+    "Form": [
+      {
+        "name": "Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "content": "Please write your message here.",
+        "button": "Send"
+      }
+    ]
+  }
+}

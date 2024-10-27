@@ -2,18 +2,19 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const links = [
-  { name: "home", path: "/" },
-  { name: "services", path: "/services" },
-  { name: "resume", path: "/resume" },
-  { name: "work", path: "/work" },
-  { name: "contact", path: "/contact" },
-];
+import { useTranslations } from "next-intl";
 
 const Nav = () => {
   const pathName = usePathname();
-  console.log(pathName);
+  const t = useTranslations("Header");
+
+  const links = [
+    { name: t("home"), path: "/" },
+    { name: t("services"), path: "/services" },
+    { name: t("resume"), path: "/resume" },
+    { name: t("work"), path: "/work" },
+    { name: t("contact"), path: "/contact" },
+  ];
 
   return (
     <nav className="flex gap-8">

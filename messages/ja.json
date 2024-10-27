@@ -1,0 +1,195 @@
+{
+  "Header": {
+    "home": "ホーム",
+    "services": "サービス",
+    "resume": "私について",
+    "work": "ポートフォリオ",
+    "contact": "お問い合わせ"
+  },
+  "Home": {
+    "description": "現在、カナダと日本でフリーランスエンジニアとして働いています。"
+  },
+
+  "Projects": [
+    {
+      "num": "01",
+      "category": "Full-stack",
+      "title": "バンクーバーのお家探し",
+      "description": "カナダのシェアハウスを紹介するウェブサイトを構築しました。",
+      "stack": [
+        { "name": "Next.js" },
+        { "name": "TypeScript" },
+        { "name": "Notion" },
+        { "name": "shadcn UI" },
+        { "name": "Tailwind" },
+        { "name": "Next.js" },
+        { "name": "Express" },
+        { "name": "Zod" }
+      ],
+      "image": "/Van_ouchi.png",
+      "live": "https://www.van-ouchi.com/properties",
+      "github": ""
+    },
+    {
+      "num": "02",
+      "category": "Full-stack",
+      "title": "SNSクローンアプリ",
+      "description": "モダンなSNS機能を統合した新しいプラットフォームを構築。",
+      "stack": [
+        { "name": "Next.js" },
+        { "name": "TypeScript" },
+        { "name": "PostgreSQL" },
+        { "name": "Prisma" },
+        { "name": "Shadcn UI" },
+        { "name": "TailwindCSS" },
+        { "name": "Express" }
+      ],
+      "image": "/SocialMediaClone.png",
+      "live": "https://social-media-app-next-js-ten.vercel.app",
+      "github": "https://github.com/yusuken1121/SocialMediaApp_NextJs"
+    }
+  ],
+  "Resume": {
+    "About": [
+      {
+        "title": "私について",
+        "description": "フルスタックでの開発経験があり、React、Next.js、Node.jsを中心に最新技術を活用した開発に取り組んできました。カナダのCornerstone International Community CollegeでアルゴリズムやHTML、JavaScript、SQLなどを学び、アプリ開発も経験しています。UI/UX設計やチームワークを重視し、今後も技術を深めながらユーザーに価値を提供するプロダクトを作り続けることを目指しています。",
+        "info": [
+          {
+            "fieldName": "名前",
+            "fieldValue": "長岡 勇佑"
+          },
+          {
+            "fieldName": "電話 (カナダ)",
+            "fieldValue": "(+1) 604 726 0374"
+          },
+          {
+            "fieldName": "電話 (日本)",
+            "fieldValue": "(+81) 090 6189 1996"
+          },
+          {
+            "fieldName": "国籍",
+            "fieldValue": "日本"
+          },
+          {
+            "fieldName": "メール",
+            "fieldValue": "yusukechopin11@gmail.com"
+          },
+          {
+            "fieldName": "フリーランスの可否",
+            "fieldValue": "対応可能"
+          },
+          {
+            "fieldName": "言語",
+            "fieldValue": "英語、日本語"
+          }
+        ]
+      }
+    ],
+    "Experiences": [
+      {
+        "title": "経験",
+        "description": "多文化チームでの経験を活かし、多様な文化や個々の性格を尊重しながらプロジェクトを推進してきました。",
+        "items": [
+          {
+            "company": "BLOOM CONSULTING Inc.",
+            "position": "フルスタック開発者",
+            "employmentType": "フリーランス",
+            "country": "カナダ",
+            "duration": "2024年9月 - 現在"
+          },
+          {
+            "company": "株式会社 フォックスバイト",
+            "position": "フロントエンド開発者",
+            "employmentType": "フリーランス",
+            "country": "日本",
+            "duration": "2024年9月 - 現在"
+          },
+          {
+            "company": "Chingu",
+            "position": "フロントエンド開発者",
+            "country": "カナダ",
+            "duration": "2024年3月 - 8月"
+          }
+        ]
+      }
+    ],
+
+    "Educations": [
+      {
+        "icon": "",
+        "title": "学歴",
+        "description": "HTML、CSS、JavaScriptからReact、Next.js、Node.jsまで幅広く学びながら、SQLを活用したデータ管理やアプリ開発に取り組みました。",
+        "items": [
+          {
+            "school": "CICCC",
+            "program": "フルスタック開発者のディプロマ",
+            "country": "カナダ",
+            "duration": "2024年1月 - 12月"
+          }
+        ]
+      }
+    ],
+
+    "Skills": [
+      {
+        "title": "スキル",
+        "description": "これまでの経験を通じて、以下の技術スタックを用いた開発に取り組んできました。フロントエンドからバックエンドまで幅広いスキルを持ち、要件に応じた柔軟なシステム設計や開発が可能です。ReactやNext.jsを使った動的なUIの構築から、SQL・NoSQLを活用した効率的なデータ管理、またNode.jsとExpressによるサーバーサイド開発まで一貫して対応できます。",
+        "SkillList": [
+          { "name": "React", "icon": "SiReact" },
+          { "name": "Next.js", "icon": "SiNextdotjs" },
+          { "name": "TypeScript", "icon": "SiTypescript" },
+          { "name": "JavaScript", "icon": "SiJavascript" },
+          { "name": "MongoDB", "icon": "SiMongodb" },
+          { "name": "PostgreSQL", "icon": "SiPostgresql" },
+          { "name": "Express", "icon": "SiExpress" },
+          { "name": "Node.js", "icon": "SiNodedotjs" },
+          { "name": "Tailwind CSS", "icon": "SiTailwindcss" },
+          { "name": "Shadcn", "icon": "SiShadcnui" },
+          { "name": "MUI", "icon": "SiMui" },
+          { "name": "HTML 5", "icon": "SiHtml5" },
+          { "name": "CSS 3", "icon": "SiCss3" }
+        ]
+      }
+    ]
+  },
+  "Contact": {
+    "Description": [
+      {
+        "state": "お気軽にご連絡ください！",
+        "description": "ご質問等ございましたら、SNSで連絡するか、こちらからメールを送ることができます。"
+      }
+    ],
+    "Info": [
+      {
+        "icon": "FaPhoneAlt",
+        "title": "電話（カナダ）",
+        "description": "(+1) 604 726 0374"
+      },
+      {
+        "icon": "FaPhoneAlt",
+        "title": "電話（日本）",
+        "description": "(+81) 090 6189 1996"
+      },
+      {
+        "icon": "FaEnvelope",
+        "title": "メールアドレス",
+        "description": "yusukechopin11@gmail.com"
+      },
+      {
+        "icon": "FaMapMarkerAlt",
+        "title": "住所",
+        "description": "バンクーバー または 東京"
+      }
+    ],
+    "Form": [
+      {
+        "name": "氏名",
+        "email": "メールアドレス",
+        "phone": "電話番号",
+        "content": "ここにメッセージをお書きください。",
+        "button": "送信"
+      }
+    ]
+  }
+}
