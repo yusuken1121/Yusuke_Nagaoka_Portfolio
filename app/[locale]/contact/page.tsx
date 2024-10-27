@@ -68,7 +68,6 @@ const Contact = () => {
   const descriptions = t.raw("Description")[0] as DescriptionType;
   const info = t.raw("Info") as InfoType[];
   const contactForm = t.raw("Form")[0] as ContactForm;
-  console.log(contactForm);
 
   return (
     <motion.section
