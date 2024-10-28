@@ -30,6 +30,7 @@ const config: Config = {
           // hover: "#00e187",
           hover: "#00ccbb",
         },
+        secondDark: "#27272c",
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -196,6 +196,20 @@
         "content": "Please write your message here.",
         "button": "Send"
       }
+    ],
+    "Error": [
+      {
+        "name": "Please enter your name.",
+        "subject": "Please enter the subject.",
+        "email": "Please enter your email address.",
+        "content": "Please enter the content."
+      }
+    ],
+    "Toast": [
+      {
+        "success": "The email was sent successfully.",
+        "fail": "Failed to send the email."
+      }
     ]
   }
 }

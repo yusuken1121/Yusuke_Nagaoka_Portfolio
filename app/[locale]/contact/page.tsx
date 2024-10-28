@@ -14,35 +14,14 @@ import { Textarea } from "@/components/ui/textarea";
 // } from "@/components/ui/select";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
-// const info = [
-//   {
-//     icon: <FaPhoneAlt />,
-//     title: "Phone-Canada",
-//     description: "(+1) 604 726 0374",
-//   },
-//   {
-//     icon: <FaPhoneAlt />,
-//     title: "Phone-Japan",
-//     description: "(+81) 090 6189 1996",
-//   },
-//   {
-//     icon: <FaEnvelope />,
-//     title: "Email",
-//     description: "yusukechopin11@gmail.com",
-//   },
-//   {
-//     icon: <FaMapMarkerAlt />,
-//     title: "Address",
-//     description: "Vancouver or Tokyo",
-//   },
-// ];
-
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
+import { useState } from "react";
+import { Loader2 } from "lucide-react";
 
 interface DescriptionType {
   state: string;
@@ -61,24 +40,39 @@ interface ContactForm {
   button: string;
 }
 
+interface ErrorMessageType {
+  name: string;
+  subject: string;
+  email: string;
+  content: string;
+}
+
+interface ToastMessageType {
+  success: string;
+  fail: string;
+}
+
 const iconMap: { [key: string]: JSX.Element } = {
   FaPhoneAlt: <FaPhoneAlt />,
   FaEnvelope: <FaEnvelope />,
   FaMapMarkerAlt: <FaMapMarkerAlt />,
 };
 
-const formSchema = z.object({
-  name: z.string().min(1, "Name is required").max(50),
-  subject: z.string().min(1, "Subject is required").max(50),
-  email: z.string().email("Invalid email address"),
-  content: z.string().min(1, "Content is required"),
-});
-
 const Contact = () => {
   const t = useTranslations("Contact");
   const descriptions = t.raw("Description")[0] as DescriptionType;
   const info = t.raw("Info") as InfoType[];
   const contactForm = t.raw("Form")[0] as ContactForm;
+  const errorMessage = t.raw("Error")[0] as ErrorMessageType;
+  const toastMessage = t.raw("Toast")[0] as ToastMessageType;
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const formSchema = z.object({
+    name: z.string().min(1, errorMessage.name).max(50),
+    subject: z.string().min(1, errorMessage.subject).max(50),
+    email: z.string().email(errorMessage.email),
+    content: z.string().min(1, errorMessage.content),
+  });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -91,8 +85,8 @@ const Contact = () => {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
     try {
+      setLoading(true);
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
@@ -100,8 +94,20 @@ const Contact = () => {
         },
         body: JSON.stringify(values),
       });
+      if (response.ok) {
+        toast.success(`${toastMessage.success}`, { position: "top-right" });
+        form.reset(); // フォームリセット
+      } else {
+        const result = await response.json();
+        toast.error(`${toastMessage.fail}`, {
+          position: "top-right",
+        });
+      }
     } catch (error) {
       console.error("Error submitting form:", error);
+      toast.error("予期せぬエラーが発生しました。", { position: "top-right" });
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -120,7 +126,7 @@ const Contact = () => {
           <div className="xl:w-[54%] order-2 xl:order-none">
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+              className="flex flex-col gap-6 p-10 bg-secondDark rounded-xl"
             >
               <h3 className="text-4xl text-accent text-shadow">
                 {/* Let&apos;s work together */}
@@ -131,39 +137,39 @@ const Contact = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* <Input type="firstname" placeholder="Firstname" />
                 <Input type="lastname" placeholder="Lastname" /> */}
-                <div className="flex flex-col">
+                <div className="flex flex-col gap-2">
                   <Input
                     type="text"
                     placeholder={contactForm.name}
                     {...form.register("name")}
                   />
                   {form.formState.errors.name && (
-                    <span className="text-red-500 text-xs">
+                    <span className=" text-accent text-shadow text-xs">
                       {form.formState.errors.name.message}
                     </span>
                   )}
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col gap-2">
                   <Input
                     type="text"
                     placeholder={contactForm.subject}
                     {...form.register("subject")}
                   />
                   {form.formState.errors.subject && (
-                    <span className="text-red-500 text-xs">
+                    <span className=" text-accent text-shadow text-xs">
                       {form.formState.errors.subject.message}
                     </span>
                   )}
                 </div>
 
-                <div className="flex flex-col">
+                <div className="flex flex-col gap-2">
                   <Input
                     type="email"
                     placeholder={contactForm.email}
                     {...form.register("email")}
                   />
                   {form.formState.errors.email && (
-                    <span className="text-red-500 text-xs">
+                    <span className=" text-accent text-shadow text-xs">
                       {form.formState.errors.email.message}
                     </span>
                   )}
@@ -187,14 +193,14 @@ const Contact = () => {
               </Select> */}
 
               {/* textarea */}
-              <div className="flex flex-col">
+              <div className="flex flex-col gap-2">
                 <Textarea
                   className="h-[200px] text-white"
                   placeholder={contactForm.content}
                   {...form.register("content")}
                 />
                 {form.formState.errors.content && (
-                  <span className="text-red-500 text-xs">
+                  <span className=" text-accent text-shadow text-xs">
                     {form.formState.errors.content.message}
                   </span>
                 )}
@@ -205,8 +211,13 @@ const Contact = () => {
                 size="md"
                 type="submit"
                 className="max-w-40 shadow-custom"
+                disabled={loading}
               >
-                {contactForm.button}
+                {loading ? (
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin text-black" />
+                ) : (
+                  contactForm.button
+                )}
               </Button>
             </form>
           </div>
