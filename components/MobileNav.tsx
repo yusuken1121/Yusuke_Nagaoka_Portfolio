@@ -5,7 +5,6 @@ import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { CiMenuFries } from "react-icons/ci";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { Button } from "./ui/button";
 
 const MobileNav = () => {
   const pathname = usePathname();
