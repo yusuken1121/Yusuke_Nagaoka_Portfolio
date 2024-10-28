@@ -14,13 +14,12 @@ const MobileNav = () => {
   const path = locale === "ja" ? "ja" : locale === "en" ? "en" : "/";
   const links = [
     { name: t("home"), path: `/${path}` },
-    { name: t("services"), path: `/${path}/services` },
+    // { name: t("services"), path: `/${path}/services` },
     { name: t("resume"), path: `/${path}/resume` },
     { name: t("work"), path: `/${path}/work` },
     { name: t("contact"), path: `/${path}/contact` },
   ];
 
-  console.log("⭐️", pathname, links[0].path);
   return (
     <Sheet>
       <SheetTrigger className="flex justify-center items-center">
