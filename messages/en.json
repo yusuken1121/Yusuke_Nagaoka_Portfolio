@@ -1,4 +1,8 @@
 {
+  "Metadata": {
+    "title": "Yusuke Nagaoka's Portfolio",
+    "description": "Showcasing expertise and accomplishments in frontend and backend development, as well as web application creation."
+  },
   "Header": {
     "home": "Home",
     "services": "Services",

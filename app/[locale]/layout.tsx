@@ -10,6 +10,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Toaster } from "@/components/ui/sonner";
+import { getTranslations } from "next-intl/server";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -17,10 +18,17 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrainsMono",
 });
 
-export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "",
-};
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: ["en", "ja"] };
+}) {
+  const t = await getTranslations({ locale, namespace: "Metadata" });
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 export default async function RootLayout({
   children,
