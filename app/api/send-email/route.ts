@@ -3,7 +3,6 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   const { name, email, subject, content } = await req.json();
-  console.log("⭐️email,subject,content:", email, subject, content);
 
   const myMail = process.env.EMAIL_USER;
   const pass = process.env.EMAIL_PASS;
