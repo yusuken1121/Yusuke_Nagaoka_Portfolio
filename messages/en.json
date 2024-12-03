@@ -30,6 +30,29 @@
     {
       "num": "02",
       "category": "full-stack",
+      "title": "Japanese-English Phrase Learning App",
+      "description": "An app that leverages AI to revolutionize the efficiency of English learning. It incorporates real needs I experienced during my study abroad, such as features I wished existed to make learning easier. Designed to address challenges faced by language learners, it prioritizes intuitive mobile usability and delivers a seamless user experience.",
+      "stack": [
+        { "name": "Next.js" },
+        { "name": "TypeScript" },
+        { "name": "Gemini API" },
+        { "name": "Clerk" },
+        { "name": "PostgreSQL" },
+        { "name": "Prisma" },
+        { "name": "Shadcn UI" },
+        { "name": "zod" },
+        { "name": "React Hook Form" },
+        { "name": "Framer Motion" },
+        { "name": "Lottie" },
+        { "name": "TailwindCSS" }
+      ],
+      "image": "/language_app.png",
+      "live": "https://language-app-coral.vercel.app",
+      "github": "https://github.com/yusuken1121/Language_App"
+    },
+    {
+      "num": "03",
+      "category": "full-stack",
       "title": "Social Media Clone",
       "description": "This project aims to create a unique social media platform by integrating essential features from modern social networking sites and major services. I started with basic functionalities such as authentication and user posts. Although the project is still in progress, I plan to expand its features and enhance its usability in the future.",
       "stack": [

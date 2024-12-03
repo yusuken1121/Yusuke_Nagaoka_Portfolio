@@ -18,6 +18,7 @@ import Link from "next/link";
 import Image from "next/image";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
 import { useTranslations } from "next-intl";
+import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 
 // const projects = [
 //   {
@@ -176,11 +177,15 @@ const Work = () => {
               {projects.map((project, idx) => {
                 return (
                   <SwiperSlide key={idx}>
-                    <div className="h-[460px] relative group flex justify-center bg-pink-50/20">
+                    <div className="h-auto relative group flex justify-between bg-pink-50/20">
                       {/* overlay */}
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+                      {/* <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div> */}
                       {/* image */}
-                      <div className="relative w-full h-full">
+                      {/* <div className="relative w-full h-full"> */}
+                      <AspectRatio
+                        ratio={16 / 9}
+                        className="relative w-full h-full"
+                      >
                         <Image
                           src={project.image}
                           fill
@@ -188,8 +193,9 @@ const Work = () => {
                           unoptimized={true}
                           className="object-cover"
                         />
-                      </div>
+                      </AspectRatio>
                     </div>
+                    {/* </div> */}
                   </SwiperSlide>
                 );
               })}

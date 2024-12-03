@@ -33,6 +33,30 @@
     {
       "num": "02",
       "category": "Full-stack",
+      "title": "日英フレーズ学習アプリ",
+      "description": "AIを駆使して、英語学習を革新的に効率化するアプリです。留学中に感じた「こんな機能があれば助かるのに」というリアルなニーズを反映し、語学学習者が直面する課題を解決するために設計しました。また、モバイルでの直感的な操作性と快適なユーザー体験を徹底的に重視しています。",
+      "stack": [
+        { "name": "Next.js" },
+        { "name": "TypeScript" },
+        { "name": "Gemini API" },
+        { "name": "Clerk" },
+        { "name": "PostgreSQL" },
+        { "name": "Prisma" },
+        { "name": "Shadcn UI" },
+        { "name": "zod" },
+        { "name": "React Hook Form" },
+        { "name": "React Quill" },
+        { "name": "Lottie" },
+        { "name": "Framer Motion" },
+        { "name": "TailwindCSS" }
+      ],
+      "image": "/language_app.png",
+      "live": "https://language-app-coral.vercel.app",
+      "github": "https://github.com/yusuken1121/Language_App"
+    },
+    {
+      "num": "03",
+      "category": "Full-stack",
       "title": "SNSクローンアプリ",
       "description": "モダンなSNS機能を統合した新しいプラットフォームを構築。",
       "stack": [
