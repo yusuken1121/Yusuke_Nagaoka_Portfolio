@@ -18,6 +18,8 @@ import {
   SiMongodb,
   SiShadcnui,
   SiMui,
+  SiFirebase,
+  SiGooglegemini,
 } from "react-icons/si";
 
 export interface AboutType {
@@ -77,7 +79,9 @@ const iconMap: { [key: string]: JSX.Element } = {
   SiNodedotjs: <SiNodedotjs />,
   SiTailwindcss: <SiTailwindcss />,
   SiShadcnui: <SiShadcnui />,
+  SiFirebase: <SiFirebase />,
   SiMui: <SiMui />,
+  SiGooglegemini: <SiGooglegemini />,
   SiHtml5: <SiHtml5 />,
   SiCss3: <SiCss3 />,
 };

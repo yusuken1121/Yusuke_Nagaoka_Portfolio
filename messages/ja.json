@@ -170,11 +170,13 @@
           { "name": "JavaScript", "icon": "SiJavascript" },
           { "name": "MongoDB", "icon": "SiMongodb" },
           { "name": "PostgreSQL", "icon": "SiPostgresql" },
+          { "name": "Firebase", "icon": "SiFirebase" },
           { "name": "Express", "icon": "SiExpress" },
           { "name": "Node.js", "icon": "SiNodedotjs" },
           { "name": "Tailwind CSS", "icon": "SiTailwindcss" },
-          { "name": "Shadcn", "icon": "SiShadcnui" },
+          { "name": "shadcn/ui", "icon": "SiShadcnui" },
           { "name": "MUI", "icon": "SiMui" },
+          { "name": "Gemini API", "icon": "SiGooglegemini" },
           { "name": "HTML 5", "icon": "SiHtml5" },
           { "name": "CSS 3", "icon": "SiCss3" }
         ]
