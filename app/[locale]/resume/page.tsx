@@ -242,10 +242,12 @@ const Resume = () => {
                     return (
                       <li
                         key={idx}
-                        className="flex items-center justify-center xl:justify-start gap-4"
+                        className="grid grid-cols-2 items-center justify-center text-left xl:justify-start gap-4"
                       >
                         <span className="text-white/60">{item.fieldName}</span>
-                        <span className="text-white">{item.fieldValue}</span>
+                        <span className="text-white break-words">
+                          {item.fieldValue}
+                        </span>
                       </li>
                     );
                   })}
