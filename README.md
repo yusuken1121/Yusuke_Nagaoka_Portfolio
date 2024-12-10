@@ -30,7 +30,3 @@ This is my personal portfolio website showcasing my projects, skills, and experi
 - Multi-language support (Japanese and English).
 - Tabs navigation for experience, education, skills, and about sections.
 - Smooth animations and responsive design.
-
----
-
-Feel free to add more details or links to make the README even more professional!
