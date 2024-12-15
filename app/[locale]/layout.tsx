@@ -27,7 +27,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    icons: "../../public/pianoChihuahua_black.jpg",
+    icons: "/pianoChihuahua_black.jpg",
     verification: {
       google: (
         <meta

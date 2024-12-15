@@ -71,16 +71,6 @@
       "image": "/SocialMediaClone.png",
       "live": "https://social-media-app-next-js-ten.vercel.app",
       "github": "https://github.com/yusuken1121/SocialMediaApp_NextJs"
-    },
-    {
-      "num": "03",
-      "category": "frontend",
-      "title": "project 3",
-      "description": "",
-      "stack": [{ "name": "Next.js" }, { "name": "Css 3" }],
-      "image": "",
-      "live": "",
-      "github": ""
     }
   ],
   "Resume": {
