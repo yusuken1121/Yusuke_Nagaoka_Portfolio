@@ -6,8 +6,8 @@
   "Header": {
     "home": "Home",
     "services": "Services",
-    "resume": "Resume",
-    "work": "Work",
+    "resume": "Profile",
+    "work": "Portfolio",
     "contact": "Contact"
   },
   "Home": {
