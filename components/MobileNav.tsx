@@ -5,12 +5,19 @@ import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { CiMenuFries } from "react-icons/ci";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
+import { useState } from "react";
 
 const MobileNav = () => {
   const pathname = usePathname();
   const router = useRouter();
   const t = useTranslations("Header");
   const locale = useLocale();
+  const [open, setOpen] = useState(false);
+
+  // Toggle the open state
+  const toggleOpen = () => {
+    setOpen((prev) => !prev);
+  };
 
   // Determine the opposite locale
   const otherLocale = locale === "ja" ? "en" : "ja";
@@ -22,6 +29,7 @@ const MobileNav = () => {
   // Switch language by updating the locale in the path
   const switchLocale = (newLocale: string) => {
     router.push(`/${newLocale}${pathWithoutLocale}`);
+    toggleOpen();
   };
 
   const links = [
@@ -32,13 +40,13 @@ const MobileNav = () => {
   ];
 
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger className="flex justify-center items-center">
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
       <SheetContent className="flex flex-col">
         <div className="mt-32 mb-40 text-center text-2xl">
-          <Link href="/">
+          <Link href="/" onClick={toggleOpen}>
             <h1 className="text-4xl font-semibold">
               Yusuke<span className="text-accent">.</span>
             </h1>
@@ -49,6 +57,7 @@ const MobileNav = () => {
             <Link
               href={link.path}
               key={idx}
+              onClick={toggleOpen}
               className={`${
                 link.path === pathname &&
                 "text-accent text-shadow border-b-2 border-accent"
